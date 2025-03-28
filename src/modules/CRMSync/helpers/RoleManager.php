@@ -1,7 +1,7 @@
 <?php
 
-require_once 'modules/HelloWorld/helpers/UserManager.php';
-require_once 'modules/HelloWorld/helpers/GroupManager.php';
+require_once 'modules/CRMSync/helpers/UserManager.php';
+require_once 'modules/CRMSync/helpers/GroupManager.php';
 
 class RoleManager {
 

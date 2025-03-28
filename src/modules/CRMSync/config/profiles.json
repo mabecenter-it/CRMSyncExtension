@@ -49,7 +49,7 @@
                 { "name": "ProjectMilestone", "description": "Project Milestones module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
                 { "name": "ProjectTask", "description": "Project Tasks module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
                 { "name": "Project", "description": "Projects module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
-                { "name": "HelloWorld", "description": "Hello World module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "CRMSync", "description": "CRM Sync module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
                 { "name": "Events", "description": "Events module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] }
             ]              
         }

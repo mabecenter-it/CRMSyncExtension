@@ -3,11 +3,11 @@
 // SystemManager.php
 require_once('include/utils/utils.php');
 require_once('modules/Users/CreateUserPrivilegeFile.php');
-require_once 'modules/HelloWorld/models/UserConfig.php';
-require_once 'modules/HelloWorld/helpers/RoleManager.php';
-require_once 'modules/HelloWorld/helpers/ProfileManager.php';
-require_once 'modules/HelloWorld/helpers/GroupManager.php';
-require_once 'modules/HelloWorld/helpers/UserManager.php';
+require_once 'modules/CRMSync/models/UserConfig.php';
+require_once 'modules/CRMSync/helpers/RoleManager.php';
+require_once 'modules/CRMSync/helpers/ProfileManager.php';
+require_once 'modules/CRMSync/helpers/GroupManager.php';
+require_once 'modules/CRMSync/helpers/UserManager.php';
 
 class SystemManager {
     
@@ -30,7 +30,7 @@ class SystemManager {
                     error_log("\u274c Error: $errorMessage");
                     throw new Exception($errorMessage);
                 }
-                
+
                 ProfileManager::initializeProfile();
             }
 

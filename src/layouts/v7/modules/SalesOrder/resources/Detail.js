@@ -26,16 +26,16 @@ Inventory_Detail_Js("SalesOrder_Detail_Js", {}, {
                 var contactId = match[1];
                 console.log("SalesOrder_Detail_Custom_Js: ID de Contacto extraído =", contactId);
 
-                // Construimos los parámetros para llamar a la acción en HelloWorld
+                // Construimos los parámetros para llamar a la acción en CRMSync
                 var params = {
-                    module: 'HelloWorld',
+                    module: 'CRMSync',
                     action: 'BasicAjax',
                     search_module: 'Contacts',
                     base_record: contactId,
                     fields: 'phone_work,phone'
                 };
                 var url = "index.php?" + jQuery.param(params);
-                console.log("SalesOrder_Detail_Custom_Js: URL para HelloWorld BasicAjax =", url);
+                console.log("SalesOrder_Detail_Custom_Js: URL para CRMSync BasicAjax =", url);
 
                 // Realiza la petición AJAX
                 app.request.get({
@@ -50,7 +50,6 @@ Inventory_Detail_Js("SalesOrder_Detail_Js", {}, {
                         var phone = resultData.phone_work || resultData.phone || "No disponible";
                         console.log("SalesOrder_Detail_Custom_Js: Teléfono obtenido =", phone);
 
-                        // Actualiza el HTML donde antes se mostraba "Hello World!"
                         var headerContainer = jQuery('.detailview-header');
                         var customRow = headerContainer.find('.salesorder-contact-info');
                         if(customRow.length == 0) {

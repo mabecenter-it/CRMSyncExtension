@@ -1,9 +1,9 @@
 <module>
     <type>extension</type>
-    <name>HelloWorld</name>
-    <label>Hello World</label>
+    <name>CRMSync</name>
+    <label>CRM Sync</label>
     <parent>Tools</parent>
-    <version>1.31</version>
+    <version>0.0.1.0</version>
     <dependencies>
         <vtiger_version>8.3.0</vtiger_version>
         <vtiger_max_version>8.*</vtiger_max_version>

@@ -3,7 +3,7 @@
 // UserManager.php
 require_once('include/utils/utils.php');
 require_once('modules/Users/CreateUserPrivilegeFile.php');
-require_once 'modules/HelloWorld/models/UserConfig.php';
+require_once 'modules/CRMSync/models/UserConfig.php';
 
 class UserManager {
 

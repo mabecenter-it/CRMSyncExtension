@@ -1,6 +1,6 @@
 <?php
 
-require_once 'modules/HelloWorld/models/FieldConfig.php';
+require_once 'modules/CRMSync/models/FieldConfig.php';
 require_once 'vtlib/Vtiger/Module.php';
 
 class FieldManager {
