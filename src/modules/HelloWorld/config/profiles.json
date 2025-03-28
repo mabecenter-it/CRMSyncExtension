@@ -1,0 +1,57 @@
+{
+    "profile": [
+        {
+            "name": "Test Profile3",
+            "description": "Testing profile3",
+            "modules": [
+                { "name": "Dashboard", "description": "Dashboard module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Potentials", "description": "Opportunities module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                {
+                    "name": "Contacts",
+                    "description": "Contacts module",
+                    "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"],
+                    "fields": [
+                        {
+                            "name": "first_name",
+                            "permissions": "Invisible"
+                        }
+                    ]
+                },
+                { "name": "Accounts", "description": "Organizations module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Leads", "description": "Leads module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Documents", "description": "Documents module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Calendar", "description": "Calendar module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Emails", "description": "Emails module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "HelpDesk", "description": "Tickets module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Products", "description": "Products module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Faq", "description": "FAQ module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Vendors", "description": "Vendors module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "PriceBooks", "description": "Price Books module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Quotes", "description": "Quotes module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "PurchaseOrder", "description": "Purchase Orders module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "SalesOrder", "description": "Sales Orders module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Invoice", "description": "Invoices module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Rss", "description": "Rss module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Reports", "description": "Reports module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Campaigns", "description": "Campaigns module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Portal", "description": "Our Sites module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "ServiceContracts", "description": "Service Contracts module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "PBXManager", "description": "PBX Manager module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "MailManager", "description": "Mail Manager module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Services", "description": "Services module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Webforms", "description": "Webforms module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Google", "description": "Google module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "SMSNotifier", "description": "SMS Notifier module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "EmailTemplates", "description": "Email Templates module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "RecycleBin", "description": "Recycle Bin module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Assets", "description": "Assets module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "ModComments", "description": "Comments module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "ProjectMilestone", "description": "Project Milestones module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "ProjectTask", "description": "Project Tasks module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Project", "description": "Projects module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "HelloWorld", "description": "Hello World module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] },
+                { "name": "Events", "description": "Events module", "permissions": ["EditView", "Delete", "DetailView", "Import", "Export", "CreateView"] }
+            ]              
+        }
+    ]
+}

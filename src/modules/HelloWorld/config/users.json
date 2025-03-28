@@ -1,0 +1,604 @@
+{
+    "roles": [
+        {
+            "name": "CEO",
+            "profile": ["Administrator"],
+            "group": [
+                {
+                    "name": "Administrator",
+                    "description": "Administrator group",
+                    "type": ["role"]
+                }
+            ],
+            "user": [
+                {
+                    "user_name": "beatrizsierra@live.com",
+                    "first_name": "Beatriz",
+                    "last_name": "Sierra",
+                    "email1": "beatrizsierra@live.com",
+                    "user_password": "changeit",
+                    "status": "Active",
+                    "is_admin": "on"
+                }
+            ],
+            "subrole": [
+                {
+                    "name": "Vice President",
+                    "profile": ["Administrator"],
+                    "group": [
+                        {
+                            "name": "Administrator",
+                            "description": "Administrator group",
+                            "type": ["role"]
+                        }
+                    ],
+                    "user": [
+                        {
+                            "user_name": "yesicab93@mabecenter.org",
+                            "first_name": "Yesica",
+                            "last_name": "Bedoya",
+                            "email1": "yesicab93@mabecenter.org",
+                            "user_password": "changeit",
+                            "status": "Active",
+                            "is_admin": "on"
+                        }
+                    ],
+                    "subrole": [
+                        {
+                            "name": "Audit Manager",
+                            "profile": ["Administrator"],
+                            "group": [
+                                {
+                                    "name": "Administrator",
+                                    "description": "Administrator group",
+                                    "type": ["role"]
+                                }
+                            ],
+                            "user": [
+                                {
+                                    "user_name": "yolyfranc@mabecenter.org",
+                                    "first_name": "Yoly",
+                                    "last_name": "Franco",
+                                    "email1": "yolyfranc@mabecenter.org",
+                                    "user_password": "changeit",
+                                    "status": "Active",
+                                    "is_admin": "on"
+                                }
+                            ],
+                            "subrole": [
+                                {
+                                    "name": "Audit Testing"
+
+                                },
+                                {
+                                    "name": "Audit Person"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Finance Manager",
+                            "profile": ["Administrator"],
+                            "group": [
+                                {
+                                    "name": "Administrator",
+                                    "description": "Administrator group",
+                                    "type": ["role"]
+                                }
+                            ],
+                            "subrole": [
+                                {
+                                    "name": "Finance Testing"
+                                },
+                                {
+                                    "name": "Finance Person"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sales Manager",
+                            "group": [
+                                {
+                                    "name": "Team Selling",
+                                    "description": "Group Related to Sales",
+                                    "type": ["role", "role and subordinates"]
+                                }
+                            ],
+                            "profile": ["Sales Profile"],
+                            "user": [
+                                {
+                                    "user_name": "carolinag96@mabecenter.org",
+                                    "first_name": "Carolina",
+                                    "last_name": "Gomez",
+                                    "email1": "carolinag96@mabecenter.org",
+                                    "user_password": "changeit",
+                                    "status": "Active",
+                                    "is_admin": "off"
+                                }
+                            ],
+                            "subrole": [
+                                {
+                                    "name": "Sales Person",
+                                    "profile": ["Sales Profile"],
+                                    "user": [
+                                        {
+                                            "user_name": "luisab96@mabecenter.org",
+                                            "first_name": "Luisa",
+                                            "last_name": "Buitrago",
+                                            "email1": "luisab96@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "natalias97@mabecenter.org",
+                                            "first_name": "Nathalia",
+                                            "last_name": "Sierra",
+                                            "email1": "natalias97@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "yesicar88@mabecenter.org",
+                                            "first_name": "Yesica",
+                                            "last_name": "Ramirez",
+                                            "email1": "yesicar88@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "yulianah99@mabecenter.org",
+                                            "first_name": "Yuliana",
+                                            "last_name": "Hidalgo",
+                                            "email1": "yulianah99@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "alejandrapv92@mabecenter.org",
+                                            "first_name": "Alejandra",
+                                            "last_name": "Páramo",
+                                            "email1": "alejandrapv92@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "angelamm96@mabecenter.org",
+                                            "first_name": "Angela",
+                                            "last_name": "Manso",
+                                            "email1": "angelamm96@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "karolr03@mabecenter.org",
+                                            "first_name": "Karol",
+                                            "last_name": "Ramirez",
+                                            "email1": "karolr03@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "elizabetha04@mabecenter.org",
+                                            "first_name": "Elizabeth",
+                                            "last_name": "Arias",
+                                            "email1": "elizabetha04@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "ximenacv03@mabecenter.org",
+                                            "first_name": "Ximena",
+                                            "last_name": "Cuenca",
+                                            "email1": "ximenacv03@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "nathalyr98@mabecenter.org",
+                                            "first_name": "Nathaly",
+                                            "last_name": "Rendón",
+                                            "email1": "nathalyr98@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Sales Testing",
+                                    "profile": ["Sales Profile"],
+                                    "user": [
+                                        {
+                                            "user_name": "yeraldinb03@mabecenter.org",
+                                            "first_name": "Yeraldin",
+                                            "last_name": "Betancourt",
+                                            "email1": "yeraldinb03@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "elianac95@mabecenter.org",
+                                            "first_name": "Eliana",
+                                            "last_name": "Castaño",
+                                            "email1": "elianac95@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "paulab93@mabecenter.org",
+                                            "first_name": "Paula",
+                                            "last_name": "Bastidas",
+                                            "email1": "paulab93@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "erikac90@mabecenter.org",
+                                            "first_name": "Erika",
+                                            "last_name": "Castro",
+                                            "email1": "erikac90@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Customer Manager",
+                            "group": [
+                                {
+                                    "name": "Support Group",
+                                    "description": "Group Related to providing Support to Customers",
+                                    "type": ["role", "role and subordinates"]
+                                }
+                            ],
+                            "profile": ["Support Profile"],
+                            "user": [
+                                {
+                                    "user_name": "margaritam94@mabecenter.org",
+                                    "first_name": "Margarita",
+                                    "last_name": "Mesa",
+                                    "email1": "margaritam94@mabecenter.org",
+                                    "user_password": "changeit",
+                                    "status": "Active",
+                                    "is_admin": "off"
+                                }
+                            ],
+                            "subrole": [
+                                {
+                                    "name": "Customer Person",
+                                    "profile": ["Support Profile"],
+                                    "user": [
+                                        {
+                                            "user_name": "wendyp99@mabecenter.org",
+                                            "first_name": "Wendy",
+                                            "last_name": "Patiño",
+                                            "email1": "wendyp99@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "anyelao90@mabecenter.org",
+                                            "first_name": "Anyela",
+                                            "last_name": "Ospina",
+                                            "email1": "anyelao90@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "adrianai99@mabecenter.org",
+                                            "first_name": "Adriana",
+                                            "last_name": "Infante",
+                                            "email1": "adrianai99@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Customer Testing",
+                                    "profile": ["Guest Profile"]
+                                },
+                                {
+                                    "name": "Bill Person",
+                                    "profile": ["Support Profile"],
+                                    "user": [
+                                        {
+                                            "user_name": "valetinac00@mabecenter.org",
+                                            "first_name": "Valentina",
+                                            "last_name": "Carvajal",
+                                            "email1": "valetinac00@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "karena00@mabecenter.org",
+                                            "first_name": "Karen",
+                                            "last_name": "Arias",
+                                            "email1": "karena00@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Bill Testing",
+                                    "profile": ["Guest Profile"]
+                                },
+                                {
+                                    "name": "Appointment Person",
+                                    "profile": ["Support Profile"],
+                                    "user": [
+                                        {
+                                            "user_name": "tatianab92@mabecenter.org",
+                                            "first_name": "Tatiana",
+                                            "last_name": "Betancourt",
+                                            "email1": "tatianab92@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "juliethl02@mabecenter.org",
+                                            "first_name": "Julieth",
+                                            "last_name": "Loaiza",
+                                            "email1": "juliethl02@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "jeniferr98@mabecenter.org",
+                                            "first_name": "Jennifer",
+                                            "last_name": "Ramos",
+                                            "email1": "jeniferr98@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "juana00@mabecenter.org",
+                                            "first_name": "Juan",
+                                            "last_name": "Alarcón",
+                                            "email1": "juana00@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "samarag05@mabecenter.org",
+                                            "first_name": "Samara",
+                                            "last_name": "Guerra",
+                                            "email1": "juano98@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "elianac89@mabecenter.org",
+                                            "first_name": "Eliana",
+                                            "last_name": "Gil",
+                                            "email1": "elianac89@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Appointment Testing",
+                                    "profile": ["Guest Profile"]
+                                },
+                                {
+                                    "name": "Notification Person",
+                                    "profile": ["Support Profile"],
+                                    "user": [
+                                        {
+                                            "user_name": "danielal95@mabecenter.org",
+                                            "first_name": "Daniela",
+                                            "last_name": "López",
+                                            "email1": "danielal95@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "yensic00@mabecenter.org",
+                                            "first_name": "Yensi",
+                                            "last_name": "Cruz",
+                                            "email1": "yensic00@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Notification Testing",
+                                    "profile": ["Guest Profile"]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "HR Manager",
+                            "group": [
+                                {
+                                    "name": "Administrator",
+                                    "description": "Group Related to providing Support to Customers",
+                                    "type": ["role", "role and subordinates"]
+                                }
+                            ],
+                            "profile": ["Administrator"],
+                            "user": [
+                                {
+                                    "user_name": "mairas95@mabecenter.org",
+                                    "first_name": "Maira",
+                                    "last_name": "Santander",
+                                    "email1": "mairas95@mabecenter.org",
+                                    "user_password": "changeit",
+                                    "status": "Active",
+                                    "is_admin": "off"
+                                }
+                            ],
+                            "subrole": [
+                                {
+                                    "name": "HR Person",
+                                    "profile": ["Support Profile"]
+                                    
+                                },
+                                {
+                                    "name": "HR Testing",
+                                    "profile": ["Guest Profile"]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Typer Manager",
+                            "group": [
+                                {
+                                    "name": "Typer Group",
+                                    "description": "Typer Related to providing Support to Customers",
+                                    "type": ["role", "role and subordinates"]
+                                }
+                            ],
+                            "profile": ["Support Profile"],
+                            "subrole": [
+                                {
+                                    "name": "Typer Person",
+                                    "user": [
+                                        {
+                                            "user_name": "juano98@mabecenter.org",
+                                            "first_name": "Juan",
+                                            "last_name": "Ocampo",
+                                            "email1": "juano98@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        },
+                                        {
+                                            "user_name": "victoriac91@mabecenter.org",
+                                            "first_name": "Victoria",
+                                            "last_name": "Cuellar",
+                                            "email1": "victoriac91@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Typer Testing",
+                                    "profile": ["Guest Profile"]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "IT Manager",
+                            "group": [
+                                {
+                                    "name": "Administrator",
+                                    "description": "Administrator group",
+                                    "type": ["role", "role and subordinates"]
+                                }
+                            ],
+                            "profile": ["Administrator"],
+                            "user": [
+                                {
+                                    "user_name": "jorged94@mabecenter.org",
+                                    "first_name": "Jorge",
+                                    "last_name": "Devia",
+                                    "email1": "jorged94@mabecenter.org",
+                                    "user_password": "changeit",
+                                    "status": "Active",
+                                    "is_admin": "off"
+                                }
+                            ],
+                            "subrole": [
+                                {
+                                    "name": "IT Person",
+                                    "profile": ["Support Profile"]
+                                },
+                                {
+                                    "name": "IT Testing",
+                                    "profile": ["Guest Profile"]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Analist Manager",
+                            "group": [
+                                {
+                                    "name": "Marketing Group",
+                                    "description": "Group Related to Marketing Activities",
+                                    "type": ["role", "role and subordinates"]
+                                }
+                            ],
+                            "profile": ["Support Profile"],
+                            "subrole": [
+                                {
+                                    "name": "Analist Person",
+                                    "profile": ["Support Profile"],
+                                    "user": [
+                                        {
+                                            "user_name": "santiagom01@mabecenter.org",
+                                            "first_name": "Santiago",
+                                            "last_name": "Moncada",
+                                            "email1": "santiagom01@mabecenter.org",
+                                            "user_password": "changeit",
+                                            "status": "Active",
+                                            "is_admin": "off"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Analist Testing",
+                                    "profile": ["Guest Profile"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Director",
+                    "profile": ["Administrator"],
+                    "group": [
+                        {
+                            "name": "Administrator",
+                            "description": "Administrator group",
+                            "type": ["role"]
+                        }
+                    ],
+                    "user": [
+                        {
+                            "user_name": "martinramirez@mabecenter.org",
+                            "first_name": "Martin",
+                            "last_name": "Ramirez",
+                            "email1": "martinramirez@mabecenter.org",
+                            "user_password": "changeit",
+                            "status": "Active",
+                            "is_admin": "on"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
