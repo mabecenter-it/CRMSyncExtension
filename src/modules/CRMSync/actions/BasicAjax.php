@@ -8,7 +8,7 @@
  * All Rights Reserved.
  *************************************************************************************/
 
-class HelloWorld_BasicAjax_Action extends Vtiger_BasicAjax_Action {
+class CRMSync_BasicAjax_Action extends Vtiger_BasicAjax_Action {
 
     public function process(Vtiger_Request $request) {
         // Se espera que se envíen estos parámetros:
