@@ -71,17 +71,6 @@ class Expenses extends Vtiger_CRMEntity {
         $block->addField($field1);
         $moduleInstance->setEntityIdentifier($field1);
     
-        // Campo: expenseon (Fecha)
-        error_log("Creating field: expenseon");
-        $field2 = new Vtiger_Field();
-        $field2->name = 'expenseon';
-        $field2->label = 'Expense On';
-        $field2->uitype = 5;
-        $field2->column = 'expenseon';
-        $field2->columntype = 'Date';
-        $field2->typeofdata = 'D~O';
-        $block->addField($field2);
-    
         // Campo: expenseamount (Monto)
         error_log("Creating field: expenseamount");
         $field3 = new Vtiger_Field();
@@ -92,16 +81,6 @@ class Expenses extends Vtiger_CRMEntity {
         $field3->columntype = 'VARCHAR(255)';
         $field3->typeofdata = 'V~M';
         $block->addField($field3);
-    
-        // Campo: description (almacenado en vtiger_crmentity)
-        error_log("Creating field: description");
-        $fieldDesc = new Vtiger_Field();
-        $fieldDesc->name = 'description';
-        $fieldDesc->label = 'Description';
-        $fieldDesc->uitype = 19;
-        $fieldDesc->column = 'description';
-        $fieldDesc->table = 'vtiger_crmentity';
-        $blockcf->addField($fieldDesc);
     
         // Campo: contact_id (Lookup a Contacts, para relación 1:N)
         error_log("Creating lookup field: contact_id");
@@ -122,7 +101,7 @@ class Expenses extends Vtiger_CRMEntity {
         $filter1->name = 'All';
         $filter1->isdefault = true;
         $moduleInstance->addFilter($filter1);
-        $filter1->addField($field1)->addField($field2, 1)->addField($field3, 2);
+        $filter1->addField($field1)->addField($field3, 1);
     
         // Sharing & Webservice Setup
         $moduleInstance->setDefaultSharing();
