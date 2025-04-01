@@ -15,6 +15,7 @@ $languageStrings = array(
 	// Basic Strings
 	'Contacts' => 'Contacts',
 	'SINGLE_Contacts' => 'Contact',
+	'SINGLE_Expenses' => 'Expense',
 	'LBL_ADD_RECORD' => 'Add Contact',
 	'LBL_RECORDS_LIST' => 'Contacts List',
 
