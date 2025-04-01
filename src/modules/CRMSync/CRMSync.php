@@ -10,7 +10,7 @@ require_once 'modules/CRMSync/helpers/SystemManager.php';
 
 //include_once 'vendor/autoload.php';
 
-class    extends Vtiger_Detail_View {
+class CRMSync extends Vtiger_Detail_View {
 
     public function vtlib_handler($moduleName, $eventType) {
         error_log("Por acá ingresé a vtlib_handler");
@@ -19,7 +19,7 @@ class    extends Vtiger_Detail_View {
             //SystemManager::initializeUsers();
             self::registerCustomScripts();
             error_log("Por acá ingresé a registerCustomModule");
-            //self::registerCustomModule();
+            self::registerCustomModule();
             error_log("Por acá ingresé a registerCustomModule");
         }
     }
@@ -28,34 +28,34 @@ class    extends Vtiger_Detail_View {
         $moduleInstance = Vtiger_Module::getInstance('SalesOrder');
         $moduleInstance->addLink('HEADERSCRIPT', 'CRMSyncJS', 'modules/CRMSync/resources/custom_script.js');
     }
-
     private static function registerCustomModule() {
-        error_log("Por acá ingresé a registerCustomModule");
-
+        error_log("Iniciando creación del módulo Expenses");
+    
         $MODULENAME = 'Expenses';
-
-        error_log("Por acá ingresé");
-
+    
         // Verifica si ya existe
         $moduleInstance = Vtiger_Module::getInstance($MODULENAME);
-        if ($moduleInstance || file_exists("modules/$MODULENAME")) {
-            error_log("Module already present - choose a different name.");
+        if ($moduleInstance) {
+            error_log("El módulo ya existe: $MODULENAME");
             return;
         }
-
-        // Crear nuevo módulo tipo entidad
+    
+        // Crear módulo
         $moduleInstance = new Vtiger_Module();
         $moduleInstance->name = $MODULENAME;
         $moduleInstance->isentitytype = true;
-        $moduleInstance->tabsequence = Vtiger_Module::getNextTabSequence();
         $moduleInstance->save();
-
-        // Asignar tabla base
+    
+        // Asignar tablas
         $moduleInstance->basetable = 'vtiger_expenses';
         $moduleInstance->basetableid = 'expensesid';
-        $moduleInstance->customtable = false;
+        $moduleInstance->customtable = true;
+        $moduleInstance->customtableid = 'expensesid';
+        $moduleInstance->customtablename = 'vtiger_expensescf';
         $moduleInstance->save();
-
+    
+        $adb = PearDatabase::getInstance();
+    
         // Crear tabla base
         $schema = "CREATE TABLE IF NOT EXISTS vtiger_expenses (
             expensesid INT(11) NOT NULL AUTO_INCREMENT,
@@ -63,19 +63,25 @@ class    extends Vtiger_Detail_View {
             summary VARCHAR(255),
             PRIMARY KEY (expensesid)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
-        $adb = \PearDatabase::getInstance();
         $adb->pquery($schema, []);
-
-        // Campo principal para mostrar nombre del registro
+    
+        // Crear tabla custom
+        $schema_cf = "CREATE TABLE IF NOT EXISTS vtiger_expensescf (
+            expensesid INT(11) NOT NULL,
+            PRIMARY KEY (expensesid)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+        $adb->pquery($schema_cf, []);
+    
+        // Bloques
         $block = new Vtiger_Block();
-        $block->label = 'LBL_' . strtoupper($MODULENAME) . '_INFORMATION';
+        $block->label = 'LBL_EXPENSES_INFORMATION';
         $moduleInstance->addBlock($block);
-
+    
         $blockcf = new Vtiger_Block();
         $blockcf->label = 'LBL_CUSTOM_INFORMATION';
         $moduleInstance->addBlock($blockcf);
-
-        // Campo obligatorio de entidad
+    
+        // Campo principal (summary)
         $summaryField = new Vtiger_Field();
         $summaryField->name = 'summary';
         $summaryField->label = 'Summary';
@@ -85,7 +91,7 @@ class    extends Vtiger_Detail_View {
         $summaryField->typeofdata = 'V~M';
         $block->addField($summaryField);
         $moduleInstance->setEntityIdentifier($summaryField);
-
+    
         // Campo relacionado con Contacts
         $contactField = new Vtiger_Field();
         $contactField->name = 'contact_id';
@@ -96,21 +102,21 @@ class    extends Vtiger_Detail_View {
         $contactField->typeofdata = 'V~M';
         $contactField->setRelatedModules(['Contacts']);
         $block->addField($contactField);
-
+    
         // Filtro por defecto
-        $filter1 = new Vtiger_Filter();
-        $filter1->name = 'All';
-        $filter1->isdefault = true;
-        $moduleInstance->addFilter($filter1);
-        $filter1->addField($summaryField)->addField($contactField, 1);
-
-        // Compartición por defecto
+        $filter = new Vtiger_Filter();
+        $filter->name = 'All';
+        $filter->isdefault = true;
+        $moduleInstance->addFilter($filter);
+        $filter->addField($summaryField, 1)->addField($contactField, 2);
+    
+        // Permisos por defecto
         $moduleInstance->setDefaultSharing();
-
+    
         // Webservice
         $moduleInstance->initWebservice();
-
-        // Crear relación con Contacts
+    
+        // Relación con Contacts
         $contactsModule = Vtiger_Module::getInstance('Contacts');
         if ($contactsModule) {
             $contactsModule->setRelatedList(
@@ -120,12 +126,12 @@ class    extends Vtiger_Detail_View {
                 'get_dependents_list'
             );
         }
-
+    
         // Crear carpeta si no existe
         if (!is_dir("modules/$MODULENAME")) {
-            mkdir("modules/$MODULENAME");
+            mkdir("modules/$MODULENAME", 0755, true);
         }
-
-        error_log("Módulo $MODULENAME creado correctamente.\n");
-    }
+    
+        error_log("Módulo $MODULENAME creado correctamente.");
+    }    
 }
