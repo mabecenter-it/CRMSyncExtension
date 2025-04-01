@@ -28,34 +28,46 @@ class CRMSync extends Vtiger_Detail_View {
         $moduleInstance = Vtiger_Module::getInstance('SalesOrder');
         $moduleInstance->addLink('HEADERSCRIPT', 'CRMSyncJS', 'modules/CRMSync/resources/custom_script.js');
     }
+
     private static function registerCustomModule() {
-        error_log("Iniciando creación del módulo Expenses");
-    
+        error_log("Por acá ingresé a registerCustomModule");
+
         $MODULENAME = 'Expenses';
-    
+
+        error_log("Por acá ingresé");
+
         // Verifica si ya existe
         $moduleInstance = Vtiger_Module::getInstance($MODULENAME);
+
+        error_log("Por acá ingresé a getInstance");
         if ($moduleInstance) {
-            error_log("El módulo ya existe: $MODULENAME");
+            error_log("Module already present - choose a different name.");
             return;
         }
-    
-        // Crear módulo
+
+        error_log("por lo menos pasé el getInstance");
+
+        // Crear nuevo módulo tipo entidad
         $moduleInstance = new Vtiger_Module();
+        error_log("se crea el modulo");
         $moduleInstance->name = $MODULENAME;
+        error_log("se asigna el nombre");
         $moduleInstance->isentitytype = true;
+        error_log("se asigna el tipo de entidad");
+        $moduleInstance->tabsequence = Vtiger_Module::getNextTabSequence();
+        error_log("se asigna la secuencia");
         $moduleInstance->save();
-    
-        // Asignar tablas
+
+        error_log("Módulo $MODULENAME creado correctamente.");
+
+        // Asignar tabla base
         $moduleInstance->basetable = 'vtiger_expenses';
         $moduleInstance->basetableid = 'expensesid';
-        $moduleInstance->customtable = true;
-        $moduleInstance->customtableid = 'expensesid';
-        $moduleInstance->customtablename = 'vtiger_expensescf';
+        $moduleInstance->customtable = false;
         $moduleInstance->save();
-    
-        $adb = PearDatabase::getInstance();
-    
+
+        error_log("tabla base 'vtiger_expenses' referenciada correctamente.");
+
         // Crear tabla base
         $schema = "CREATE TABLE IF NOT EXISTS vtiger_expenses (
             expensesid INT(11) NOT NULL AUTO_INCREMENT,
@@ -63,25 +75,22 @@ class CRMSync extends Vtiger_Detail_View {
             summary VARCHAR(255),
             PRIMARY KEY (expensesid)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+        $adb = PearDatabase::getInstance();
         $adb->pquery($schema, []);
-    
-        // Crear tabla custom
-        $schema_cf = "CREATE TABLE IF NOT EXISTS vtiger_expensescf (
-            expensesid INT(11) NOT NULL,
-            PRIMARY KEY (expensesid)
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
-        $adb->pquery($schema_cf, []);
-    
-        // Bloques
+
+        error_log("tabla base 'vtiger_expenses' creada correctamente.");
+
+
+        // Campo principal para mostrar nombre del registro
         $block = new Vtiger_Block();
-        $block->label = 'LBL_EXPENSES_INFORMATION';
+        $block->label = 'LBL_' . strtoupper($MODULENAME) . '_INFORMATION';
         $moduleInstance->addBlock($block);
-    
+
         $blockcf = new Vtiger_Block();
         $blockcf->label = 'LBL_CUSTOM_INFORMATION';
         $moduleInstance->addBlock($blockcf);
-    
-        // Campo principal (summary)
+
+        // Campo obligatorio de entidad
         $summaryField = new Vtiger_Field();
         $summaryField->name = 'summary';
         $summaryField->label = 'Summary';
@@ -91,7 +100,7 @@ class CRMSync extends Vtiger_Detail_View {
         $summaryField->typeofdata = 'V~M';
         $block->addField($summaryField);
         $moduleInstance->setEntityIdentifier($summaryField);
-    
+
         // Campo relacionado con Contacts
         $contactField = new Vtiger_Field();
         $contactField->name = 'contact_id';
@@ -102,21 +111,21 @@ class CRMSync extends Vtiger_Detail_View {
         $contactField->typeofdata = 'V~M';
         $contactField->setRelatedModules(['Contacts']);
         $block->addField($contactField);
-    
+
         // Filtro por defecto
-        $filter = new Vtiger_Filter();
-        $filter->name = 'All';
-        $filter->isdefault = true;
-        $moduleInstance->addFilter($filter);
-        $filter->addField($summaryField, 1)->addField($contactField, 2);
-    
-        // Permisos por defecto
+        $filter1 = new Vtiger_Filter();
+        $filter1->name = 'All';
+        $filter1->isdefault = true;
+        $moduleInstance->addFilter($filter1);
+        $filter1->addField($summaryField)->addField($contactField, 1);
+
+        // Compartición por defecto
         $moduleInstance->setDefaultSharing();
-    
+
         // Webservice
         $moduleInstance->initWebservice();
-    
-        // Relación con Contacts
+
+        // Crear relación con Contacts
         $contactsModule = Vtiger_Module::getInstance('Contacts');
         if ($contactsModule) {
             $contactsModule->setRelatedList(
@@ -126,12 +135,12 @@ class CRMSync extends Vtiger_Detail_View {
                 'get_dependents_list'
             );
         }
-    
+
         // Crear carpeta si no existe
         if (!is_dir("modules/$MODULENAME")) {
-            mkdir("modules/$MODULENAME", 0755, true);
+            mkdir("modules/$MODULENAME");
         }
-    
-        error_log("Módulo $MODULENAME creado correctamente.");
-    }    
+
+        error_log("Módulo $MODULENAME creado correctamente.\n");
+    }
 }
